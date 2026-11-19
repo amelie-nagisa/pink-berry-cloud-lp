@@ -570,6 +570,12 @@
       inset: -250%;
       background: radial-gradient(circle closest-side, #fff6fcd6 0%, #ffedf69e 22%, #ffe7f24d 49%, #ffe7f218 76%, #ffe7f200 100%);
     }
+    .lp-light-field--center .lp-light-particle--soft-halo {
+      box-shadow: 0 0 20px #ffffff99;
+    }
+    .lp-light-field--center .lp-light-particle--soft-halo::before {
+      opacity: .45;
+    }
     .lp-light-field--center .lp-light-particle--twinkle::after {
       inset: -77.5%;
       background:
@@ -768,7 +774,8 @@
     #last-cta .last-copy > p:last-child { font-size: 15px; }
     #footer > p.small-note + p.small-note { font-size: 11px; }
 
-    #order-dialog .order-product p { font-size: 15px; }
+    #order-dialog .order-product p { font-size: 19px; }
+    #order-dialog .order-product .order-product-amount { font-size: 24px; }
     #campaign-dialog #campaign-dialog-description,
     #campaign-dialog .modal-steps > div:nth-child(-n+2) { font-size: 14px; }
   </style>
@@ -914,7 +921,7 @@
     <div class="side-inner"><p class="side-kicker">LIMITED MENU</p><p class="side-product-name">PINK BERRY<br>CLOUD</p><img class="side-product-image" src="images/pink-berry-frappe.png" width="1024" height="1536" alt=""><p class="side-price">¥680 <small>（税込）</small></p><a class="side-campaign-link" href="#campaign"><span class="eyebrow">SPECIAL CAMPAIGN</span><strong>ふわっと、しあわせ。<br>プレゼントキャンペーン</strong><small>2027.03.01 — 03.31　→</small></a></div><span class="side-scroll-hint" aria-hidden="true">SCROLL TO DISCOVER</span>
   </aside>
 
-  <dialog id="order-dialog" aria-labelledby="order-title" aria-describedby="order-description"><button class="dialog-close" type="button" data-close aria-label="注文体験を閉じる">×</button><div class="dialog-content"><p class="eyebrow">YOUR LITTLE PINK TREAT</p><h2 id="order-title" tabindex="-1">モバイルオーダー体験（SAMPLE）</h2><p class="demo-note" id="order-description">ポートフォリオ用の注文体験画面です。<br>実際の商品注文や決済は行われません。</p><div id="order-edit"><div class="order-product"><img src="images/pink-berry-frappe.png" width="1024" height="1536" alt="PINK BERRY CLOUD"><div><h3>PINK BERRY<br>CLOUD</h3><p>¥680（税込）</p></div></div><div class="quantity-row"><span id="quantity-label">数量</span><div class="quantity-controls" role="group" aria-labelledby="quantity-label"><button type="button" id="quantity-minus" aria-label="数量を1減らす" disabled>−</button><output id="quantity" aria-live="polite" aria-label="数量">1</output><button type="button" id="quantity-plus" aria-label="数量を1増やす">＋</button></div></div><div class="total-row"><span>合計 <small>（税込）</small></span><output id="order-total" aria-live="polite">¥680</output></div><div class="button-stack"><button class="btn btn-primary" type="button" id="confirm-order">注文内容を確認する</button><button class="btn btn-secondary" type="button" data-close>トップページに戻る</button></div></div><div id="order-confirm" hidden><dl class="confirmation-summary"><div><dt>商品名</dt><dd>PINK BERRY CLOUD</dd></div><div><dt>数量</dt><dd id="confirm-quantity">1個</dd></div><div><dt>合計（税込）</dt><dd id="confirm-total">¥680</dd></div></dl><p class="demo-note">注文内容の確認画面です。実際の注文・決済は行われません。</p><div class="button-stack" style="margin-top:22px"><button class="btn btn-secondary" type="button" id="edit-order">数量を変更する</button><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></div></div></dialog>
+  <dialog id="order-dialog" aria-labelledby="order-title" aria-describedby="order-description"><button class="dialog-close" type="button" data-close aria-label="注文体験を閉じる">×</button><div class="dialog-content"><p class="eyebrow">YOUR LITTLE PINK TREAT</p><h2 id="order-title" tabindex="-1">モバイルオーダー体験（SAMPLE）</h2><p class="demo-note" id="order-description">ポートフォリオ用の注文体験画面です。<br>実際の商品注文や決済は行われません。</p><div id="order-edit"><div class="order-product"><img src="images/pink-berry-frappe.png" width="1024" height="1536" alt="PINK BERRY CLOUD"><div><h3>PINK BERRY<br>CLOUD</h3><p><span class="order-product-amount">¥680</span>（税込）</p></div></div><div class="quantity-row"><span id="quantity-label">数量</span><div class="quantity-controls" role="group" aria-labelledby="quantity-label"><button type="button" id="quantity-minus" aria-label="数量を1減らす" disabled>−</button><output id="quantity" aria-live="polite" aria-label="数量">1</output><button type="button" id="quantity-plus" aria-label="数量を1増やす">＋</button></div></div><div class="total-row"><span>合計 <small>（税込）</small></span><output id="order-total" aria-live="polite">¥680</output></div><div class="button-stack"><button class="btn btn-primary" type="button" id="confirm-order">注文内容を確認する</button><button class="btn btn-secondary" type="button" data-close>トップページに戻る</button></div></div><div id="order-confirm" hidden><dl class="confirmation-summary"><div><dt>商品名</dt><dd>PINK BERRY CLOUD</dd></div><div><dt>数量</dt><dd id="confirm-quantity">1個</dd></div><div><dt>合計（税込）</dt><dd id="confirm-total">¥680</dd></div></dl><p class="demo-note">注文内容の確認画面です。実際の注文・決済は行われません。</p><div class="button-stack" style="margin-top:22px"><button class="btn btn-secondary" type="button" id="edit-order">数量を変更する</button><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></div></div></dialog>
 
   <dialog id="campaign-dialog" aria-labelledby="campaign-dialog-title" aria-describedby="campaign-dialog-description"><button class="dialog-close" type="button" data-close aria-label="キャンペーンのご案内を閉じる">×</button><div class="dialog-content campaign-dialog"><svg class="gift-icon" aria-hidden="true"><use href="#icon-gift"/></svg><h2 id="campaign-dialog-title" tabindex="-1">THANK YOU FOR<br>YOUR INTEREST ♡</h2><p id="campaign-dialog-description" style="margin-top:17px">キャンペーンに興味を持っていただき、<br>ありがとうございます。</p><h3>応募方法（イメージ）</h3><div class="modal-steps"><div><span>STEP 01</span>公式Instagramをフォロー</div><div><span>STEP 02</span>キャンペーン対象投稿に「いいね」</div></div><h3>SAMPLE SITE</h3><p>こちらはポートフォリオ用に制作した<br>架空のキャンペーンサイトです。</p><p>実際の応募受付やプレゼントの抽選は<br>行っておりません。</p><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></dialog>
 
@@ -1128,6 +1135,9 @@
           particle.style.setProperty('--light-x', `${5 + Math.random() * 90}%`);
           particle.style.setProperty('--light-y', `calc(${(i + Math.random()) / count * 100}% + 145px)`);
           particle.style.setProperty('--light-size', `${7.5 + Math.random() * 12}px`);
+          if (index === 0 && parseFloat(particle.style.getPropertyValue('--light-size')) >= 15) {
+            particle.classList.add('lp-light-particle--soft-halo');
+          }
           particle.style.setProperty('--light-duration', `${duration}s`);
           particle.style.setProperty('--light-delay', `${-Math.random() * duration}s`);
           particle.style.setProperty('--light-bend', `${drift * -.35}px`);
