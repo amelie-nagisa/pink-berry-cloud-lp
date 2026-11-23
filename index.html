@@ -4,8 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8dce5">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
   <meta name="description" content="甘酸っぱさに、夢中。3種のベリーとヨーグルト、ふわふわホイップのご褒美ドリンク、PINK BERRY CLOUD。架空のブランドのポートフォリオサイトです。">
   <title>PINK BERRY CLOUD｜甘酸っぱさに、夢中。</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600&amp;display=swap&amp;text=%E3%82%B9%E3%83%88%E3%83%AD%E3%83%99%E3%83%AA%E3%83%BC%E3%80%81%E3%83%A9%E3%82%BA%E3%83%96%E3%83%AB%E3%80%82%E3%81%8C%E7%89%B9%E5%88%A5%E3%81%AA%E7%90%86%E7%94%B1%E7%A8%AE%E3%81%AE%E7%B9%94%E3%82%8A%E3%81%99%E7%94%98%E9%85%B8%E3%81%A3%E3%81%B1%E3%81%84%E9%AD%94%E6%B3%95%E7%88%BD%E3%82%84%E3%81%8B%E3%81%95%E3%81%A8%E3%81%BE%E3%82%8D%E7%B5%B6%E5%A6%99%E3%83%90%E3%83%B3%E9%9B%B2%E3%82%88%E3%81%86%E3%81%AB%E3%81%B5%E3%82%8F%E3%81%97%E3%81%82%E3%81%9B%E3%83%97%E3%83%AC%E3%82%BC%E3%82%AD%E3%83%A3%E3%83%9A%E6%8A%BD%E9%81%B8%E3%81%A7%E5%90%8D%E6%A7%98%E7%84%A1%E6%96%99%E3%83%89%E3%82%AF%E3%83%81%E3%82%B1%E3%83%83%E3%82%92%E2%99%A1%E5%BF%9C%E5%8B%9F%E3%81%AF%E3%82%93%E3%81%9F%E3%83%86%E3%81%93%E3%82%8C%E6%9D%A1%E4%BB%B6%E9%81%94%E6%88%90%EF%BC%81%E4%BB%8A%E6%97%A5%E6%B0%97%E5%88%86%E3%83%94%E3%81%94%E8%A4%92%E7%BE%8E%E6%96%B9%EF%BC%88%E3%82%A4%E3%83%A1%E3%82%B8%EF%BC%89%E5%A4%A2%E4%B8%AD%E3%83%A2%E3%82%AA%E3%83%80%E4%BD%93%E9%A8%93%E6%B3%A8%E6%96%87%E5%86%85%E5%AE%B9%E7%A2%BA%E8%AA%8D%E5%BE%85%E3%81%A6%EF%BC%9F%E3%82%8B%E4%B8%80%E6%9D%AF">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400&amp;display=swap&amp;text=%E6%96%B0%E7%99%BA%E5%A3%B2%E8%A8%98%E5%BF%B5%EF%BC%81">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500&amp;display=swap&amp;text=%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%8A%E3%81%97%E3%81%95%E3%81%AE%E7%A7%98%E5%AF%86%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%82%AD%E3%83%A3%E3%83%9A%E3%83%BC%E6%A6%82%E8%A6%81">
   <style>
     /* Buildless, local-first LP. All images are the supplied original assets. */
     @font-face {
@@ -32,6 +38,7 @@
     img { max-width: 100%; display: block; }
     button, input { color: inherit; }
     button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px solid #8c3e81; outline-offset: 5px; }
+    button[data-open].modal-touch-return:focus-visible { outline: none; }
     h1[tabindex="-1"]:focus, h2[tabindex="-1"]:focus { outline: none; }
     h1, h2, h3, p, figure { margin: 0; }
     h1, h2, h3 { color: var(--rose); font-family: var(--serif); font-weight: 500; line-height: 1.65; }
@@ -68,7 +75,7 @@
     .hero-photo { width: 100%; height: auto; }
     .site-header { position: absolute; z-index: 6; top: 3.1cqw; right: 4.5cqw; }
     .menu-toggle { width: 44px; height: 44px; display: grid; align-content: center; gap: 5px; padding: 10px; background: transparent; border: 0; color: #bd446b; }
-    .menu-toggle span { display: block; height: 1px; background: currentColor; width: 24px; box-shadow: 0 -.25px 0 currentColor, 0 .25px 0 currentColor; transition: transform .25s; }
+    .menu-toggle span { display: block; height: 1px; background: currentColor; width: 27px; margin-inline: -1.5px; box-shadow: 0 -.25px 0 currentColor, 0 .25px 0 currentColor; transition: transform .25s; }
     .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }
     .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
     .site-nav { position: absolute; z-index: 5; top: 60px; left: 20px; right: 20px; padding: 20px; border: 1px solid #edb9cc; border-radius: 18px; background: #fffafbf7; box-shadow: 0 12px 30px #9a30562b; }
@@ -107,7 +114,7 @@
     .hero-bottom .hero-ingredients svg { color: #B33D69; }
     .hero-bottom .hero-ingredients span { color: #A83D68; }
     .hero-actions { position: relative; padding: 21px 27px 56px; background: linear-gradient(#f9d9e3, #fbe7ee); }
-    .hero-actions .btn-secondary { min-height: 44px; font-size: 12px; }
+    .hero-actions .btn-secondary { min-height: 52px; font-size: 14px; }
     .hero-brandline { text-align: center; font-size: 10px; margin-top: 14px; }
     .hero-bottom > .hero-ingredients,
     .hero-bottom > .hero-bottom-copy { translate: 0 -8px; }
@@ -116,12 +123,12 @@
     .hero > .wave { position: absolute; bottom: -1px; }
     /* Empathy */
     .empathy { padding: 50px 26px 72px; background: radial-gradient(ellipse at 0% 65%, #fbe6ee 0%, transparent 55%), #fff9fb; }
-    .empathy h2 { font-size: 25px; text-align: center; line-height: 1.7; }
+    .empathy h2 { font-family: "Zen Old Mincho", var(--serif); font-weight: 600; font-size: 27px; text-align: center; line-height: 42px; }
     .check-list { list-style: none; margin: 24px 0 28px; padding: 0; display: grid; gap: 13px; font-size: 14px; line-height: 1.9; }
     .check-list li { position: relative; padding-left: 27px; }
     .check-list li::before { content: "✓"; position: absolute; left: 0; top: 3px; width: 18px; height: 18px; border-radius: 50%; background: #ed739c; color: white; text-align: center; font: 12px/18px var(--sans); }
     .empathy-ending { text-align: center; }
-    .empathy-ending h3 { font-size: 23px; line-height: 36.3px; margin: 14px 0; }
+    .empathy-ending h3 { font-family: "Zen Old Mincho", var(--serif); font-weight: 600; font-size: 23px; line-height: 39px; margin: 14px 0; translate: 3px 0; }
     .empathy-ending p { font-size: 14px; }
     .empathy .wave { position: absolute; bottom: -1px; left: 0; color: #f9e0ea; }
     /* Product */
@@ -286,7 +293,7 @@
     #campaign { --campaign-decor-height: clamp(250px, 74vw, 288px); padding-bottom: calc(var(--campaign-decor-height) + 16px); }
     #campaign .campaign-wave-decor { position: absolute; left: 0; right: 0; bottom: 0; height: var(--campaign-decor-height); overflow: hidden; pointer-events: none; }
     /* One decorative text line, painted behind the existing campaign imagery. */
-    #campaign .campaign-marquee { position: absolute; inset-inline: 0; top: calc(43% - 25px - clamp(7.8768px, 2.461536vw, 9.6px) - clamp(1.87074px, .5846148vw, 2.28px)); overflow: hidden; pointer-events: none; color: #e8a5bd; opacity: .58; font: 400 clamp(65.4759px, 20.461518vw, 79.8px)/1.2 "Bodoni 72", Didot, "Times New Roman", serif; letter-spacing: .025em; white-space: nowrap; }
+    #campaign .campaign-marquee { position: absolute; inset-inline: 0; top: calc(43% - 25px - clamp(7.8768px, 2.461536vw, 9.6px) - clamp(1.87074px, .5846148vw, 2.28px) - 12px); overflow: hidden; pointer-events: none; color: #e8a5bd; opacity: .58; font: 400 clamp(78.57108px, 24.5538216vw, 95.76px)/1.2 "Bodoni 72", Didot, "Times New Roman", serif; letter-spacing: .025em; white-space: nowrap; }
     #campaign .campaign-marquee-track { display: flex; width: max-content; animation: campaign-marquee-scroll 30s linear infinite; }
     #campaign .campaign-marquee-copy { flex: 0 0 auto; padding-right: 40px; }
     @keyframes campaign-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -515,7 +522,7 @@
     #features .feature-lead { margin-top: 17px; font-size: 18px; line-height: 1.9; }
     #features .feature-lead br { display: none; }
     #features .feature-body { padding: 19px 20px 26px; font-size: 14px; line-height: 2; }
-    #features .feature-body > p { font-family: "Zen Kaku Gothic New", var(--sans); font-weight: 500; font-size: 15px; line-height: 28px; }
+    #features .feature-body > p { font-family: "Zen Kaku Gothic New", var(--sans); font-weight: 500; font-size: 15px; line-height: 28px; color: #783D4B; }
     #features .feature-body > p + p { margin-top: 9.8px; }
     #features .feature-tag { margin-top: 20px; border-radius: 0; padding: 5px 0; background: transparent; border-bottom: 1px solid #e8a9c2; font-size: 10px; letter-spacing: .1em; }
 
@@ -726,7 +733,7 @@
       font-family: "Zen Kaku Gothic New", var(--sans);
       font-size: 15px;
       font-weight: 500;
-      color: #645058;
+      color: #783D4B;
     }
     #hero .hero-bottom-copy > p + p { color: #A83D68; }
     #campaign > .small-note {
@@ -743,6 +750,7 @@
       font-family: "Zen Kaku Gothic New", var(--sans);
       font-size: 15px;
       font-weight: 500;
+      color: #783D4B;
     }
 
     /* Remaining Japanese UI copy; preserve all existing geometry and decoration. */
@@ -771,13 +779,58 @@
     }
     #hero .hero-actions .btn-secondary > span[aria-hidden] { font-family: var(--sans); font-size: 12px; font-weight: 600; }
     #empathy .empathy-ending > .pill { font-size: 12px; }
-    #last-cta .last-copy > p:last-child { font-size: 15px; }
+    #last-cta .last-copy > p:last-child { font-size: 15px; color: #783D4B; }
     #footer > p.small-note + p.small-note { font-size: 11px; }
 
     #order-dialog .order-product p { font-size: 19px; }
     #order-dialog .order-product .order-product-amount { font-size: 24px; }
     #campaign-dialog #campaign-dialog-description,
     #campaign-dialog .modal-steps > div:nth-child(-n+2) { font-size: 14px; }
+    /* Apply the trial mincho only to Japanese text, leaving mixed Latin text intact. */
+    .pbc-mincho-ja { font-family: "Zen Old Mincho", var(--serif); font-weight: 600; }
+    /* Local wrapping and type adjustments; keep other content and geometry intact. */
+    #product .product-copy strong {
+      width: 100%;
+      max-width: 100%;
+      margin-inline: 0;
+      letter-spacing: -.045em;
+      text-wrap: wrap;
+    }
+    @media (max-width: 376px) {
+      #product .product-copy strong { font-size: 16px; }
+    }
+    #product .product-copy strong .product-fruit-name { display: inline-block; white-space: nowrap; }
+    @media (max-width: 1023px) {
+      #features .feature-lead .feature-phrase { display: inline-block; white-space: nowrap; }
+    }
+    #order-dialog #confirm-quantity { font-size: 15px; }
+    #order-dialog #confirm-total { font-size: 16px; }
+    .site-nav a .pbc-mincho-nav-ja { font-family: "Zen Old Mincho", var(--serif); font-weight: 500; font-size: 16px; }
+    .campaign-launch .campaign-launch-en,
+    .campaign-prize .campaign-prize-en { font-family: Georgia, serif; }
+    .campaign-launch .campaign-launch-ja { font-family: "Zen Old Mincho", var(--serif); font-weight: 400; }
+    #campaign-dialog .modal-steps > div:nth-child(-n+2) > span { margin-right: 9px; }
+    @media (max-width: 375px) {
+      #campaign-dialog .modal-steps > div:nth-child(-n+2) { font-size: 13px; line-height: 28px; }
+    }
+    #campaign-dialog .campaign-dialog > h3:last-of-type ~ p { font-size: 12px; line-height: 18.5px; }
+    #campaign-dialog .campaign-dialog > h3:last-of-type ~ p + p { margin-top: 11px; }
+    #campaign-dialog .modal-steps > .modal-step-two {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      align-items: baseline;
+    }
+    #campaign-dialog .modal-step-like {
+      font: inherit;
+      color: inherit;
+      margin: 0;
+      white-space: nowrap;
+    }
+    #campaign-dialog .dialog-content { padding-bottom: 23px; }
+    #campaign-dialog .gift-icon { margin-bottom: 10px; }
+    #campaign-dialog .campaign-dialog h3 { margin-top: 16px; }
+    #campaign-dialog .modal-steps { margin-top: 10px; margin-bottom: 16px; }
+    #campaign-dialog .campaign-dialog .btn { margin-top: 19px; }
   </style>
 </head>
 <body>
@@ -804,7 +857,7 @@
       <p class="side-wordmark"><span>PINK</span><span>BERRY</span><span>CLOUD</span></p>
       <span class="side-rule" aria-hidden="true"></span>
       <p class="side-tagline">SWEET BERRIES.<br>FLUFFY CLOUDS.</p>
-      <p class="side-japanese">甘酸っぱさに、夢中。</p>
+      <p class="side-japanese"><span class="pbc-mincho-ja">甘酸っぱさに、夢中。</span></p>
       <nav class="side-nav" aria-label="ブランドメニュー"><a href="#product">MENU</a><a href="#features">STORY</a><a href="#campaign">CAMPAIGN</a></nav>
     </div>
     <p class="side-footnote">© 2026 PINK BERRY CLOUD<br>架空のブランドのポートフォリオサイトです。</p>
@@ -821,7 +874,7 @@
         <header class="site-header">
           <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
         </header>
-        <nav class="site-nav" id="site-nav" aria-label="ページメニュー" hidden><a href="#product">PINK BERRY CLOUDについて</a><a href="#features">おいしさの秘密</a><a href="#campaign">プレゼントキャンペーン</a><a href="#campaign-info">キャンペーン概要</a></nav>
+        <nav class="site-nav" id="site-nav" aria-label="ページメニュー" hidden><a href="#product">PINK BERRY CLOUD<span class="pbc-mincho-nav-ja">について</span></a><a href="#features"><span class="pbc-mincho-nav-ja">おいしさの秘密</span></a><a href="#campaign"><span class="pbc-mincho-nav-ja">プレゼントキャンペーン</span></a><a href="#campaign-info"><span class="pbc-mincho-nav-ja">キャンペーン概要</span></a></nav>
         <div class="hero-stage">
           <img class="hero-photo" src="images/pink-berry-cafe.png" width="1024" height="1536" fetchpriority="high" alt="3種のベリーと真っ白なホイップが彩るピンク色のPINK BERRY CLOUD">
 
@@ -860,28 +913,28 @@
           </div>
           <div class="product-meta"><p class="price"><span class="yen">¥</span>680<small>（税込）</small></p><p><span class="pill">期間限定</span><br><span class="pill">数量限定</span></p></div>
         </div>
-        <div class="product-copy reveal"><p><strong>ストロベリー、ラズベリー、ブルーベリー。</strong><br>3種のベリーの甘酸っぱさに、<br>ヨーグルトの爽やかさをプラス。</p><p>カップの上には、雲のようなふわふわホイップ。艶やかなベリーソースとフルーツが彩る、見た目にも心ときめくピンク色の一杯。</p><p>甘さと酸味、まろやかさが絶妙に重なり合う。<br>ひと口飲めば、もうひと口飲みたくなる。</p></div>
+        <div class="product-copy reveal"><p><strong><span class="pbc-mincho-ja"><span class="product-fruit-name">ストロベリー、</span><span class="product-fruit-name">ラズベリー、</span><span class="product-fruit-name">ブルーベリー。</span></span></strong><br>3種のベリーの甘酸っぱさに、<br>ヨーグルトの爽やかさをプラス。</p><p>カップの上には、雲のようなふわふわホイップ。艶やかなベリーソースとフルーツが彩る、見た目にも心ときめくピンク色の一杯。</p><p>甘さと酸味、まろやかさが絶妙に重なり合う。<br>ひと口飲めば、もうひと口飲みたくなる。</p></div>
         <p class="small-note">※価格・販売期間・販売場所はポートフォリオ用の仮設定です。</p>
         <button class="btn btn-primary" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button>
       </section>
 
       <section class="features" id="features" aria-labelledby="features-title">
         <div class="section-ornament" aria-hidden="true"><span></span></div>
-        <h2 class="section-title reveal" id="features-title">PINK BERRY CLOUDが<br>特別な理由</h2>
+        <h2 class="section-title reveal" id="features-title">PINK BERRY CLOUD<span class="pbc-mincho-ja">が</span><br><span class="pbc-mincho-ja">特別な理由</span></h2>
         <p class="eyebrow reveal">TRIPLE BERRY × YOGURT × FLUFFY CREAM</p>
         <div class="feature-list">
-          <article class="feature-card reveal" aria-labelledby="berry-title"><div class="feature-top"><figure class="feature-photo berry-photo"><img src="images/berry-splash.png" width="1374" height="1145" loading="lazy" alt="みずみずしいストロベリー、ラズベリー、ブルーベリーとベリーソース"></figure><div class="feature-heading"><p class="feature-number">01.</p><h3 id="berry-title">TRIPLE <br>BERRY</h3><p class="feature-lead">3種のベリーが織りなす、甘酸っぱい魔法。</p></div></div><div class="feature-body"><p>ストロベリー、ラズベリー、ブルーベリー。3種のベリーが重なり合い、華やかな甘酸っぱさが口いっぱいに広がります。</p><p>甘さの中に感じる、きゅんとするような酸味。ベリー好きにはたまらない、果実感あふれる味わいです。</p><span class="feature-tag">JUICY &amp; SWEET</span></div></article>
-          <article class="feature-card reveal" aria-labelledby="yogurt-title"><div class="feature-top"><figure class="feature-photo trio-photo yogurt-photo"><img src="images/berry-dessert-trio.png" width="1678" height="937" loading="lazy" alt="ベリーと溶け合う、なめらかな白いヨーグルト"></figure><div class="feature-heading"><p class="feature-number">02.</p><h3 id="yogurt-title">YOGURT <br>FRESHNESS</h3><p class="feature-lead">爽やかさと、<br>まろやかさの<br>絶妙なバランス。</p></div></div><div class="feature-body"><p>ベリーの甘酸っぱさを引き立てる、ヨーグルトの爽やかな味わい。フルーティーな風味と、まろやかな口当たりが心地よく溶け合います。</p><p>甘いだけじゃない、すっきりとした後味。何度でも飲みたくなる、おいしさの秘密です。</p><span class="feature-tag">FRESH &amp; MELLOW</span></div></article>
-          <article class="feature-card reveal" aria-labelledby="cream-title"><div class="feature-top"><figure class="feature-photo trio-photo cream-photo"><img src="images/berry-dessert-trio.png" width="1678" height="937" loading="lazy" alt="ベリーソースをまとった、雲のようなホイップクリーム"></figure><div class="feature-heading"><p class="feature-number">03.</p><h3 id="cream-title">FLUFFY <br>CREAM</h3><p class="feature-lead">雲のようにふわふわ、やさしい甘さ。</p></div></div><div class="feature-body"><p>ドリンクの上にふんわりと広がる、真っ白なホイップクリーム。ベリーソースが彩る、ピンクとホワイトの美しいコントラスト。</p><p>ふわっとした甘さがベリーの酸味を包み込み、ひと口ごとに幸せな気分に。見た目も味わいも楽しめる、特別なご褒美です。</p><span class="feature-tag">SOFT AS A CLOUD</span></div></article>
+          <article class="feature-card reveal" aria-labelledby="berry-title"><div class="feature-top"><figure class="feature-photo berry-photo"><img src="images/berry-splash.png" width="1374" height="1145" loading="lazy" alt="みずみずしいストロベリー、ラズベリー、ブルーベリーとベリーソース"></figure><div class="feature-heading"><p class="feature-number">01.</p><h3 id="berry-title">TRIPLE <br>BERRY</h3><p class="feature-lead"><span class="feature-phrase">3<span class="pbc-mincho-ja">種のベリーが織りなす、</span></span><span class="feature-phrase"><span class="pbc-mincho-ja">甘酸っぱい魔法。</span></span></p></div></div><div class="feature-body"><p>ストロベリー、ラズベリー、ブルーベリー。3種のベリーが重なり合い、華やかな甘酸っぱさが口いっぱいに広がります。</p><p>甘さの中に感じる、きゅんとするような酸味。ベリー好きにはたまらない、果実感あふれる味わいです。</p><span class="feature-tag">JUICY &amp; SWEET</span></div></article>
+          <article class="feature-card reveal" aria-labelledby="yogurt-title"><div class="feature-top"><figure class="feature-photo trio-photo yogurt-photo"><img src="images/berry-dessert-trio.png" width="1678" height="937" loading="lazy" alt="ベリーと溶け合う、なめらかな白いヨーグルト"></figure><div class="feature-heading"><p class="feature-number">02.</p><h3 id="yogurt-title">YOGURT <br>FRESHNESS</h3><p class="feature-lead"><span class="feature-phrase"><span class="pbc-mincho-ja">爽やかさと、</span></span><br><span class="feature-phrase"><span class="pbc-mincho-ja">まろやかさの</span></span><br><span class="feature-phrase"><span class="pbc-mincho-ja">絶妙なバランス。</span></span></p></div></div><div class="feature-body"><p>ベリーの甘酸っぱさを引き立てる、ヨーグルトの爽やかな味わい。フルーティーな風味と、まろやかな口当たりが心地よく溶け合います。</p><p>甘いだけじゃない、すっきりとした後味。何度でも飲みたくなる、おいしさの秘密です。</p><span class="feature-tag">FRESH &amp; MELLOW</span></div></article>
+          <article class="feature-card reveal" aria-labelledby="cream-title"><div class="feature-top"><figure class="feature-photo trio-photo cream-photo"><img src="images/berry-dessert-trio.png" width="1678" height="937" loading="lazy" alt="ベリーソースをまとった、雲のようなホイップクリーム"></figure><div class="feature-heading"><p class="feature-number">03.</p><h3 id="cream-title">FLUFFY <br>CREAM</h3><p class="feature-lead"><span class="feature-phrase"><span class="pbc-mincho-ja">雲のようにふわふわ、</span></span><span class="feature-phrase"><span class="pbc-mincho-ja">やさしい甘さ。</span></span></p></div></div><div class="feature-body"><p>ドリンクの上にふんわりと広がる、真っ白なホイップクリーム。ベリーソースが彩る、ピンクとホワイトの美しいコントラスト。</p><p>ふわっとした甘さがベリーの酸味を包み込み、ひと口ごとに幸せな気分に。見た目も味わいも楽しめる、特別なご褒美です。</p><span class="feature-tag">SOFT AS A CLOUD</span></div></article>
         </div>
         <div class="chapter-bridge" aria-hidden="true"><div class="section-ornament"><span></span></div></div>
       </section>
 
       <section class="campaign" id="campaign" aria-labelledby="campaign-title">
 
-        <div class="reveal"><p class="campaign-kicker">ふわっと、しあわせ。</p><h2 id="campaign-title">プレゼントキャンペーン</h2><p class="campaign-launch">PINK BERRY CLOUD 新発売記念！</p></div>
+        <div class="reveal"><p class="campaign-kicker"><span class="pbc-mincho-ja">ふわっと、しあわせ。</span></p><h2 id="campaign-title"><span class="pbc-mincho-ja">プレゼントキャンペーン</span></h2><p class="campaign-launch"><span class="campaign-launch-en">PINK BERRY CLOUD</span> <span class="campaign-launch-ja">新発売記念！</span></p></div>
         <p class="campaign-description reveal">甘酸っぱいベリーと、<br>ふわふわホイップの幸せを、あなたにも。</p>
-        <p class="campaign-prize reveal">抽選で<strong>100</strong>名様に<span class="prize-detail">PINK BERRY CLOUD<br>無料ドリンクチケットをプレゼント♡</span></p>
+        <p class="campaign-prize reveal"><span class="pbc-mincho-ja">抽選で</span><strong>100</strong><span class="pbc-mincho-ja">名様に</span><span class="prize-detail"><span class="campaign-prize-en">PINK BERRY CLOUD</span><br><span class="pbc-mincho-ja">無料ドリンクチケットをプレゼント♡</span></span></p>
         <figure class="ticket reveal"><img src="images/drink-ticket.png" width="1775" height="886" loading="lazy" alt="PINK BERRY CLOUDのオリジナル無料ドリンクチケット。抽選で100名様にプレゼントする架空の企画。チケットはサンプルで実際の利用はできません。"></figure>
         <p class="campaign-description reveal">公式Instagramのフォロー＆<br>対象投稿への「いいね」で応募完了！</p>
         <button class="btn btn-primary" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button>
@@ -902,9 +955,9 @@
 
       <section class="campaign-info" id="campaign-info" aria-labelledby="info-title"><div class="info-card reveal"><div class="section-ornament" aria-hidden="true"><span></span></div><h2 id="info-title">CAMPAIGN INFORMATION</h2><dl><div><dt>キャンペーン名</dt><dd>ふわっと、しあわせ。<br>プレゼントキャンペーン</dd></div><div><dt>応募期間</dt><dd><time datetime="2027-03-01">2027年3月1日（月）</time>〜<br><time datetime="2027-03-31">3月31日（水）</time></dd></div><div><dt>プレゼント内容</dt><dd>PINK BERRY CLOUD<br>無料ドリンクチケット 1枚</dd></div><div><dt>当選人数</dt><dd>抽選で100名様</dd></div><div><dt>応募方法</dt><dd>PINK BERRY CLOUD公式Instagramをフォローし、対象のキャンペーン投稿に「いいね」する。</dd></div><div><dt>当選発表</dt><dd>当選者の方へInstagramのDMにてご連絡する想定です。</dd></div></dl><p class="small-note">※本キャンペーンはポートフォリオ用の架空の企画です。実際の応募受付・抽選・賞品提供は行いません。</p></div></section>
 
-      <section class="campaign-steps" id="campaign-steps" aria-labelledby="steps-title"><h2 class="reveal" id="steps-title">応募はかんたん2ステップ</h2><ol class="steps"><li class="step reveal"><div class="step-number"><small>STEP</small>01</div><div><svg aria-hidden="true"><use href="#icon-instagram"/></svg><p>PINK BERRY CLOUD<br>公式Instagramをフォロー。</p></div></li><li class="step reveal reveal-delay"><div class="step-number"><small>STEP</small>02</div><div><svg aria-hidden="true"><use href="#icon-heart"/></svg><p>キャンペーン対象投稿に<br>「いいね」。</p></div></li></ol><p class="steps-result reveal">これで応募条件達成！</p><p class="small-note">当選者の方にはInstagramのDMで<br>ご連絡する想定です。<br>※架空の企画です。実際の応募受付・抽選は行いません。</p><button class="btn btn-primary" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button><svg class="wave" viewBox="0 0 390 35" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6C40 12 85 30 135 30C185 30 235 4 285 4C335 4 360 16 390 23V35H0Z"/></svg></section>
+      <section class="campaign-steps" id="campaign-steps" aria-labelledby="steps-title"><h2 class="reveal" id="steps-title"><span class="pbc-mincho-ja">応募はかんたん</span>2<span class="pbc-mincho-ja">ステップ</span></h2><ol class="steps"><li class="step reveal"><div class="step-number"><small>STEP</small>01</div><div><svg aria-hidden="true"><use href="#icon-instagram"/></svg><p>PINK BERRY CLOUD<br>公式Instagramをフォロー。</p></div></li><li class="step reveal reveal-delay"><div class="step-number"><small>STEP</small>02</div><div><svg aria-hidden="true"><use href="#icon-heart"/></svg><p>キャンペーン対象投稿に<br>「いいね」。</p></div></li></ol><p class="steps-result reveal"><span class="pbc-mincho-ja">これで応募条件達成！</span></p><p class="small-note">当選者の方にはInstagramのDMで<br>ご連絡する想定です。<br>※架空の企画です。実際の応募受付・抽選は行いません。</p><button class="btn btn-primary" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button><svg class="wave" viewBox="0 0 390 35" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6C40 12 85 30 135 30C185 30 235 4 285 4C335 4 360 16 390 23V35H0Z"/></svg></section>
 
-      <section class="last-cta" id="last-cta" aria-labelledby="last-title"><h2 class="reveal" id="last-title">今日の気分に、<br>ピンクのご褒美を。</h2><div class="last-visual"><img class="reveal" src="images/pink-berry-cafe.png" width="1024" height="1536" loading="lazy" alt="ベリーとホイップをたっぷり重ねたPINK BERRY CLOUD"></div><div class="last-copy reveal"><p>甘酸っぱい3種のベリーと、<br>ヨーグルトの爽やかさ。<br>雲のようなふわふわホイップを重ねて。</p><p>甘くて、爽やかで、もうひと口飲みたくなる。<br>いつもの一日を、ちょっと幸せな一日に。</p><p class="brand-text last-brand">PINK BERRY CLOUD</p><p>この季節だけの、とっておきの一杯を。</p></div><button class="btn btn-primary" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button><p class="eyebrow">SWEET BERRIES. FLUFFY CLOUDS.</p></section>
+      <section class="last-cta" id="last-cta" aria-labelledby="last-title"><h2 class="reveal" id="last-title"><span class="pbc-mincho-ja">今日の気分に、</span><br><span class="pbc-mincho-ja">ピンクのご褒美を。</span></h2><div class="last-visual"><img class="reveal" src="images/pink-berry-cafe.png" width="1024" height="1536" loading="lazy" alt="ベリーとホイップをたっぷり重ねたPINK BERRY CLOUD"></div><div class="last-copy reveal"><p>甘酸っぱい3種のベリーと、<br>ヨーグルトの爽やかさ。<br>雲のようなふわふわホイップを重ねて。</p><p>甘くて、爽やかで、もうひと口飲みたくなる。<br>いつもの一日を、ちょっと幸せな一日に。</p><p class="brand-text last-brand">PINK BERRY CLOUD</p><p>この季節だけの、とっておきの一杯を。</p></div><button class="btn btn-primary" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button><p class="eyebrow">SWEET BERRIES. FLUFFY CLOUDS.</p></section>
 
       <footer class="footer" id="footer"><div class="section-ornament" aria-hidden="true"><span></span></div><p class="brand-text">PINK BERRY CLOUD</p><p class="eyebrow">SWEET BERRIES. FLUFFY CLOUDS.</p><nav class="footer-nav" aria-label="フッターメニュー"><a href="#hero">TOP</a><a href="#product">MENU</a><a href="#features">STORY</a><a href="#campaign">CAMPAIGN</a></nav><p class="small-note">本サイトはデザイン・Web制作のポートフォリオとして制作した架空のブランド・キャンペーンサイトです。</p><p class="small-note">実際の商品販売、注文受付、キャンペーン応募、抽選、賞品提供は行っておりません。</p><a class="top-link" href="#hero" aria-label="ページトップへ戻る">↑</a><small>© 2026 PINK BERRY CLOUD</small></footer>
     </div>
@@ -918,12 +971,12 @@
     </div>
 
 
-    <div class="side-inner"><p class="side-kicker">LIMITED MENU</p><p class="side-product-name">PINK BERRY<br>CLOUD</p><img class="side-product-image" src="images/pink-berry-frappe.png" width="1024" height="1536" alt=""><p class="side-price">¥680 <small>（税込）</small></p><a class="side-campaign-link" href="#campaign"><span class="eyebrow">SPECIAL CAMPAIGN</span><strong>ふわっと、しあわせ。<br>プレゼントキャンペーン</strong><small>2027.03.01 — 03.31　→</small></a></div><span class="side-scroll-hint" aria-hidden="true">SCROLL TO DISCOVER</span>
+    <div class="side-inner"><p class="side-kicker">LIMITED MENU</p><p class="side-product-name">PINK BERRY<br>CLOUD</p><img class="side-product-image" src="images/pink-berry-frappe.png" width="1024" height="1536" alt=""><p class="side-price">¥680 <small>（税込）</small></p><a class="side-campaign-link" href="#campaign"><span class="eyebrow">SPECIAL CAMPAIGN</span><strong><span class="pbc-mincho-ja">ふわっと、しあわせ。</span><br><span class="pbc-mincho-ja">プレゼントキャンペーン</span></strong><small>2027.03.01 — 03.31　→</small></a></div><span class="side-scroll-hint" aria-hidden="true">SCROLL TO DISCOVER</span>
   </aside>
 
-  <dialog id="order-dialog" aria-labelledby="order-title" aria-describedby="order-description"><button class="dialog-close" type="button" data-close aria-label="注文体験を閉じる">×</button><div class="dialog-content"><p class="eyebrow">YOUR LITTLE PINK TREAT</p><h2 id="order-title" tabindex="-1">モバイルオーダー体験（SAMPLE）</h2><p class="demo-note" id="order-description">ポートフォリオ用の注文体験画面です。<br>実際の商品注文や決済は行われません。</p><div id="order-edit"><div class="order-product"><img src="images/pink-berry-frappe.png" width="1024" height="1536" alt="PINK BERRY CLOUD"><div><h3>PINK BERRY<br>CLOUD</h3><p><span class="order-product-amount">¥680</span>（税込）</p></div></div><div class="quantity-row"><span id="quantity-label">数量</span><div class="quantity-controls" role="group" aria-labelledby="quantity-label"><button type="button" id="quantity-minus" aria-label="数量を1減らす" disabled>−</button><output id="quantity" aria-live="polite" aria-label="数量">1</output><button type="button" id="quantity-plus" aria-label="数量を1増やす">＋</button></div></div><div class="total-row"><span>合計 <small>（税込）</small></span><output id="order-total" aria-live="polite">¥680</output></div><div class="button-stack"><button class="btn btn-primary" type="button" id="confirm-order">注文内容を確認する</button><button class="btn btn-secondary" type="button" data-close>トップページに戻る</button></div></div><div id="order-confirm" hidden><dl class="confirmation-summary"><div><dt>商品名</dt><dd>PINK BERRY CLOUD</dd></div><div><dt>数量</dt><dd id="confirm-quantity">1個</dd></div><div><dt>合計（税込）</dt><dd id="confirm-total">¥680</dd></div></dl><p class="demo-note">注文内容の確認画面です。実際の注文・決済は行われません。</p><div class="button-stack" style="margin-top:22px"><button class="btn btn-secondary" type="button" id="edit-order">数量を変更する</button><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></div></div></dialog>
+  <dialog id="order-dialog" aria-labelledby="order-title" aria-describedby="order-description"><button class="dialog-close" type="button" data-close aria-label="注文体験を閉じる">×</button><div class="dialog-content"><p class="eyebrow">YOUR LITTLE PINK TREAT</p><h2 id="order-title" tabindex="-1"><span class="pbc-mincho-ja">モバイルオーダー体験</span>（SAMPLE）</h2><p class="demo-note" id="order-description">ポートフォリオ用の注文体験画面です。<br>実際の商品注文や決済は行われません。</p><div id="order-edit"><div class="order-product"><img src="images/pink-berry-frappe.png" width="1024" height="1536" alt="PINK BERRY CLOUD"><div><h3>PINK BERRY<br>CLOUD</h3><p><span class="order-product-amount">¥680</span>（税込）</p></div></div><div class="quantity-row"><span id="quantity-label">数量</span><div class="quantity-controls" role="group" aria-labelledby="quantity-label"><button type="button" id="quantity-minus" aria-label="数量を1減らす" disabled>−</button><output id="quantity" aria-live="polite" aria-label="数量">1</output><button type="button" id="quantity-plus" aria-label="数量を1増やす">＋</button></div></div><div class="total-row"><span>合計 <small>（税込）</small></span><output id="order-total" aria-live="polite">¥680</output></div><div class="button-stack"><button class="btn btn-primary" type="button" id="confirm-order">注文内容を確認する</button><button class="btn btn-secondary" type="button" data-close>トップページに戻る</button></div></div><div id="order-confirm" hidden><dl class="confirmation-summary"><div><dt>商品名</dt><dd>PINK BERRY CLOUD</dd></div><div><dt>数量</dt><dd id="confirm-quantity">1個</dd></div><div><dt>合計（税込）</dt><dd id="confirm-total">¥680</dd></div></dl><p class="demo-note">注文内容の確認画面です。実際の注文・決済は行われません。</p><div class="button-stack" style="margin-top:22px"><button class="btn btn-secondary" type="button" id="edit-order">数量を変更する</button><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></div></div></dialog>
 
-  <dialog id="campaign-dialog" aria-labelledby="campaign-dialog-title" aria-describedby="campaign-dialog-description"><button class="dialog-close" type="button" data-close aria-label="キャンペーンのご案内を閉じる">×</button><div class="dialog-content campaign-dialog"><svg class="gift-icon" aria-hidden="true"><use href="#icon-gift"/></svg><h2 id="campaign-dialog-title" tabindex="-1">THANK YOU FOR<br>YOUR INTEREST ♡</h2><p id="campaign-dialog-description" style="margin-top:17px">キャンペーンに興味を持っていただき、<br>ありがとうございます。</p><h3>応募方法（イメージ）</h3><div class="modal-steps"><div><span>STEP 01</span>公式Instagramをフォロー</div><div><span>STEP 02</span>キャンペーン対象投稿に「いいね」</div></div><h3>SAMPLE SITE</h3><p>こちらはポートフォリオ用に制作した<br>架空のキャンペーンサイトです。</p><p>実際の応募受付やプレゼントの抽選は<br>行っておりません。</p><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></dialog>
+  <dialog id="campaign-dialog" aria-labelledby="campaign-dialog-title" aria-describedby="campaign-dialog-description"><button class="dialog-close" type="button" data-close aria-label="キャンペーンのご案内を閉じる">×</button><div class="dialog-content campaign-dialog"><svg class="gift-icon" aria-hidden="true"><use href="#icon-gift"/></svg><h2 id="campaign-dialog-title" tabindex="-1">THANK YOU FOR<br>YOUR INTEREST ♡</h2><p id="campaign-dialog-description" style="margin-top:13px">キャンペーンに興味を持っていただき、<br>ありがとうございます。</p><h3><span class="pbc-mincho-ja">応募方法（イメージ）</span></h3><div class="modal-steps"><div><span>STEP 01</span>公式Instagramをフォロー</div><div class="modal-step-two"><span>STEP 02</span><div class="modal-step-description">キャンペーン対象投稿に<span class="modal-step-like">「いいね」</span></div></div></div><h3>SAMPLE SITE</h3><p>こちらはポートフォリオ用に制作した<br>架空のキャンペーンサイトです。</p><p>実際の応募受付やプレゼントの抽選は<br>行っておりません。</p><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></dialog>
 
   <script>
   (() => {
@@ -936,6 +989,20 @@
     const dialogs = { order: document.querySelector('#order-dialog'), campaign: document.querySelector('#campaign-dialog') };
     let activeDialog = null;
     let opener = null;
+    let dialogInputIsTouch = false;
+    let touchReturnOpener = null;
+    function clearTouchReturnFocus() {
+      if (touchReturnOpener) touchReturnOpener.classList.remove('modal-touch-return');
+      touchReturnOpener = null;
+    }
+    document.addEventListener('pointerdown', event => {
+      dialogInputIsTouch = event.pointerType === 'touch';
+      clearTouchReturnFocus();
+    }, { capture: true, passive: true });
+    document.addEventListener('keydown', () => {
+      dialogInputIsTouch = false;
+      clearTouchReturnFocus();
+    }, true);
     let scrollLock = null;
     let quantity = 1;
     let revealObserver = null;
@@ -1014,7 +1081,10 @@
     function showOrderStep(confirming, focus = true) {
       document.querySelector('#order-edit').hidden = confirming;
       document.querySelector('#order-confirm').hidden = !confirming;
-      document.querySelector('#order-title').textContent = confirming ? '注文内容の確認（SAMPLE）' : 'モバイルオーダー体験（SAMPLE）';
+      const titleCopy = document.createElement('span');
+      titleCopy.className = 'pbc-mincho-ja';
+      titleCopy.textContent = confirming ? '注文内容の確認' : 'モバイルオーダー体験';
+      document.querySelector('#order-title').replaceChildren(titleCopy, '（SAMPLE）');
       if (focus) {
         dialogs.order.scrollTop = 0;
         document.querySelector('#order-title').focus({ preventScroll: true });
@@ -1043,7 +1113,14 @@
       dialog.addEventListener('close', () => {
         activeDialog = null;
         unlockScroll();
-        if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+        if (opener && opener.isConnected) {
+          clearTouchReturnFocus();
+          if (dialogInputIsTouch) {
+            opener.classList.add('modal-touch-return');
+            touchReturnOpener = opener;
+          }
+          opener.focus({ preventScroll: true });
+        }
       });
     });
     document.querySelector('#quantity-minus').addEventListener('click', () => { quantity = Math.max(1, quantity - 1); updateQuantity(); });
