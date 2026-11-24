@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8dce5">
   <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="images/favicon-512.png">
   <meta name="description" content="甘酸っぱさに、夢中。3種のベリーとヨーグルト、ふわふわホイップのご褒美ドリンク、PINK BERRY CLOUD。架空のブランドのポートフォリオサイトです。">
   <title>PINK BERRY CLOUD｜甘酸っぱさに、夢中。</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,9 +127,9 @@
     .empathy h2 { font-family: "Zen Old Mincho", var(--serif); font-weight: 600; font-size: 27px; text-align: center; line-height: 42px; }
     .check-list { list-style: none; margin: 24px 0 28px; padding: 0; display: grid; gap: 13px; font-size: 14px; line-height: 1.9; }
     .check-list li { position: relative; padding-left: 27px; }
-    .check-list li::before { content: "✓"; position: absolute; left: 0; top: 3px; width: 18px; height: 18px; border-radius: 50%; background: #ed739c; color: white; text-align: center; font: 12px/18px var(--sans); }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: #ed739c; color: white; text-align: center; font: 12px/18px var(--sans); }
     .empathy-ending { text-align: center; }
-    .empathy-ending h3 { font-family: "Zen Old Mincho", var(--serif); font-weight: 600; font-size: 23px; line-height: 39px; margin: 14px 0; translate: 3px 0; }
+    .empathy-ending h3 { font-family: "Zen Old Mincho", var(--serif); font-weight: 600; font-size: 27px; line-height: 42px; margin: 20px 0; translate: 3px 0; }
     .empathy-ending p { font-size: 14px; }
     .empathy .wave { position: absolute; bottom: -1px; left: 0; color: #f9e0ea; }
     /* Product */
@@ -778,7 +779,7 @@
       font-weight: 500;
     }
     #hero .hero-actions .btn-secondary > span[aria-hidden] { font-family: var(--sans); font-size: 12px; font-weight: 600; }
-    #empathy .empathy-ending > .pill { font-size: 12px; }
+    #empathy .empathy-ending > .pill { font-size: 14.4px; padding: 3.6px 15.6px; border-width: 1.2px; }
     #last-cta .last-copy > p:last-child { font-size: 15px; color: #783D4B; }
     #footer > p.small-note + p.small-note { font-size: 11px; }
 
@@ -831,6 +832,71 @@
     #campaign-dialog .campaign-dialog h3 { margin-top: 16px; }
     #campaign-dialog .modal-steps { margin-top: 10px; margin-bottom: 16px; }
     #campaign-dialog .campaign-dialog .btn { margin-top: 19px; }
+
+    /* Shared jelly finish: entry CTAs and modal actions retain their color roles. */
+    #empathy .empathy-pill-text { display: inline-block; translate: 2px 0; }
+    .btn.pbc-jelly {
+      box-shadow: var(--pbc-jelly-shadow);
+      transform: none;
+      transition: transform .16s ease-out, filter .16s ease-out, box-shadow .16s ease-out;
+    }
+    .btn-primary.pbc-jelly {
+      background:
+        linear-gradient(180deg, #ffffff22 0%, #ffffff00 22%),
+        linear-gradient(165deg, #eb83a4 0%, #d83c75 42%, #c82e65 100%);
+      --pbc-jelly-shadow: inset 0 1px 2px #ffffff55, inset 0 -3px 5px #9e1e4b38,
+        0 3px 0 #ae285b55, 0 7px 17px #b52b6029;
+      --pbc-jelly-pressed-shadow: inset 0 2px 4px #8e174638, inset 0 -1px 2px #ffffff26,
+        0 1px 0 #ae285b40, 0 2px 5px #b52b6026;
+    }
+    .btn-secondary.pbc-jelly {
+      background: linear-gradient(180deg, #fffdfed9, #fff7fbd9);
+      --pbc-jelly-shadow: inset 0 1px 2px #ffffffcc, inset 0 -2px 4px #e7abc21f,
+        0 2px 0 #da6b9326, 0 5px 12px #b52b6014;
+      --pbc-jelly-pressed-shadow: inset 0 2px 4px #ca789736,
+        0 1px 0 #da6b9320, 0 1px 3px #b52b6012;
+    }
+    @media (hover: hover) {
+      .btn.pbc-jelly:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.025);
+      }
+      .btn-primary.pbc-jelly:hover {
+        background:
+          linear-gradient(180deg, #ffffff22 0%, #ffffff00 22%),
+          linear-gradient(165deg, #ee8eac 0%, #e34d82 42%, #d83c73 100%);
+        filter: none;
+      }
+    }
+    .btn.pbc-jelly:active {
+      transform: translateY(2px) scale(.98, .94);
+      filter: none;
+      transition-duration: .05s;
+      --pbc-jelly-shadow: var(--pbc-jelly-pressed-shadow);
+    }
+    /* Replace all normal highlight layers while pressed; keep white text undimmed. */
+    .btn-primary.pbc-jelly:active {
+      background: linear-gradient(165deg, #e37299 0%, #cf346b 42%, #be295d 100%);
+    }
+    .btn-secondary.pbc-jelly:active {
+      background: linear-gradient(180deg, #fff0f6, #f3d1e0);
+    }
+    html[data-pbc-input="keyboard"] .btn.pbc-jelly:focus,
+    .btn.pbc-jelly:focus-visible:not(.modal-touch-return) {
+      outline: 2px solid #be3b70;
+      outline-offset: 4px;
+      box-shadow: 0 0 0 3px #fff9fb, var(--pbc-jelly-shadow);
+    }
+    /* Pointer feedback uses the button itself; keyboard focus keeps the ring above. */
+    html[data-pbc-input="pointer"] .btn.pbc-jelly:focus {
+      outline: none;
+      box-shadow: var(--pbc-jelly-shadow);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn.pbc-jelly { transition: none; }
+      .btn.pbc-jelly:hover,
+      .btn.pbc-jelly:active { transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -890,14 +956,14 @@
             <ul class="hero-ingredients" aria-label="ストロベリー、ラズベリー、ブルーベリー、ミルククリーム"><li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 14C3 20 8 36 13 42C23 42 41 26 35 17C30 11 20 12 14 14Z M17 14L13 6L23 11L25 3L29 12L37 10L33 17"/><path d="M15 22v1m9-5v1m5 5v1m-9 3v1m-7 3v1m12 2v1"/></svg><span>STRAWBERRY</span></li><li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 12L12 5L22 9L24 3L28 10L37 7L32 15"/><ellipse cx="17" cy="18" rx="5" ry="6"/><ellipse cx="27" cy="18" rx="5" ry="6"/><ellipse cx="12" cy="27" rx="5" ry="6"/><ellipse cx="22" cy="27" rx="5" ry="6"/><ellipse cx="32" cy="27" rx="5" ry="6"/><ellipse cx="17" cy="36" rx="5" ry="6"/><ellipse cx="27" cy="36" rx="5" ry="6"/></svg><span>RASPBERRY</span></li><li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 15C3 7 1 40 19 41C36 46 37 14 24 15Z M26 15C44 7 49 36 34 39 M20 12C9 13 12 3 12 3C22 3 23 9 20 12Z M26 12C26 3 37 3 37 3C37 11 31 13 26 12Z M17 18L19 21L23 20L21 24L17 25L18 21Z"/></svg><span>BLUEBERRY</span></li><li><svg viewBox="0 0 56 48" aria-hidden="true"><path d="M9 33C-1 33 0 18 10 18C10 0 35 0 36 16C52 9 59 33 44 33Z"/></svg><span>MILK CREAM</span></li></ul>
             <div class="hero-bottom-copy"><p class="hero-script">Berry in the Clouds</p><p>3種のベリーとふわふわクリーム。<br>まるで雲の上にいるみたいな、<br>やさしい甘さのご褒美ドリンク。</p></div>
           </div>
-        <div class="hero-actions"><div class="button-stack"><button class="btn btn-primary" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button><a class="btn btn-secondary" href="#features">おいしさの秘密を知る <span aria-hidden="true">↓</span></a></div><p class="brand-text hero-brandline">PINK BERRY CLOUD</p></div>
+        <div class="hero-actions"><div class="button-stack"><button class="btn btn-primary pbc-jelly" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button><a class="btn btn-secondary" href="#features">おいしさの秘密を知る <span aria-hidden="true">↓</span></a></div><p class="brand-text hero-brandline">PINK BERRY CLOUD</p></div>
         <svg class="wave" viewBox="0 0 390 35" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6C40 12 85 30 135 30C185 30 235 4 285 4C335 4 360 16 390 23V35H0Z"/></svg>
       </section>
 
       <section class="empathy" id="empathy" aria-labelledby="empathy-title">
         <h2 class="reveal" id="empathy-title">こんなドリンク、<br>待ってなかった？</h2>
         <ul class="check-list reveal"><li>甘いだけじゃなく、爽やかさも楽しみたい。</li><li>ベリーの甘酸っぱさに、ときめきたい。</li><li>ふわふわのホイップがのった、かわいい一杯が好き。</li><li>思わず写真を撮りたくなるような、特別感が欲しい。</li><li>頑張った自分に、ちょっとしたご褒美をあげたい。</li></ul>
-        <div class="empathy-ending reveal"><span class="pill">そんなあなたに。</span><h3>甘酸っぱさに、<br>夢中になる一杯を。</h3><p>PINK BERRY CLOUDが、<br>何気ない一日を、<br>心ときめくひとときに変えます。</p></div>
+        <div class="empathy-ending reveal"><span class="pill"><span class="empathy-pill-text">そんなあなたに。</span></span><h3>甘酸っぱさに、<br>夢中になる一杯を。</h3><p>PINK BERRY CLOUDが、<br>何気ない一日を、<br>心ときめくひとときに変えます。</p></div>
         <svg class="wave" viewBox="0 0 390 35" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6C40 12 85 30 135 30C185 30 235 4 285 4C335 4 360 16 390 23V35H0Z"/></svg>
       </section>
 
@@ -915,7 +981,7 @@
         </div>
         <div class="product-copy reveal"><p><strong><span class="pbc-mincho-ja"><span class="product-fruit-name">ストロベリー、</span><span class="product-fruit-name">ラズベリー、</span><span class="product-fruit-name">ブルーベリー。</span></span></strong><br>3種のベリーの甘酸っぱさに、<br>ヨーグルトの爽やかさをプラス。</p><p>カップの上には、雲のようなふわふわホイップ。艶やかなベリーソースとフルーツが彩る、見た目にも心ときめくピンク色の一杯。</p><p>甘さと酸味、まろやかさが絶妙に重なり合う。<br>ひと口飲めば、もうひと口飲みたくなる。</p></div>
         <p class="small-note">※価格・販売期間・販売場所はポートフォリオ用の仮設定です。</p>
-        <button class="btn btn-primary" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button>
+        <button class="btn btn-primary pbc-jelly" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button>
       </section>
 
       <section class="features" id="features" aria-labelledby="features-title">
@@ -937,7 +1003,7 @@
         <p class="campaign-prize reveal"><span class="pbc-mincho-ja">抽選で</span><strong>100</strong><span class="pbc-mincho-ja">名様に</span><span class="prize-detail"><span class="campaign-prize-en">PINK BERRY CLOUD</span><br><span class="pbc-mincho-ja">無料ドリンクチケットをプレゼント♡</span></span></p>
         <figure class="ticket reveal"><img src="images/drink-ticket.png" width="1775" height="886" loading="lazy" alt="PINK BERRY CLOUDのオリジナル無料ドリンクチケット。抽選で100名様にプレゼントする架空の企画。チケットはサンプルで実際の利用はできません。"></figure>
         <p class="campaign-description reveal">公式Instagramのフォロー＆<br>対象投稿への「いいね」で応募完了！</p>
-        <button class="btn btn-primary" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button>
+        <button class="btn btn-primary pbc-jelly" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button>
         <p class="small-note">※架空のキャンペーンです。ボタンから応募手順の例をご覧いただけます。実際の応募受付は行いません。</p>
         <div class="campaign-wave-decor" aria-hidden="true">
           <div class="campaign-marquee"><div class="campaign-marquee-track"><span class="campaign-marquee-copy">PINK BERRY CLOUD</span><span class="campaign-marquee-copy">PINK BERRY CLOUD</span></div></div>
@@ -955,9 +1021,9 @@
 
       <section class="campaign-info" id="campaign-info" aria-labelledby="info-title"><div class="info-card reveal"><div class="section-ornament" aria-hidden="true"><span></span></div><h2 id="info-title">CAMPAIGN INFORMATION</h2><dl><div><dt>キャンペーン名</dt><dd>ふわっと、しあわせ。<br>プレゼントキャンペーン</dd></div><div><dt>応募期間</dt><dd><time datetime="2027-03-01">2027年3月1日（月）</time>〜<br><time datetime="2027-03-31">3月31日（水）</time></dd></div><div><dt>プレゼント内容</dt><dd>PINK BERRY CLOUD<br>無料ドリンクチケット 1枚</dd></div><div><dt>当選人数</dt><dd>抽選で100名様</dd></div><div><dt>応募方法</dt><dd>PINK BERRY CLOUD公式Instagramをフォローし、対象のキャンペーン投稿に「いいね」する。</dd></div><div><dt>当選発表</dt><dd>当選者の方へInstagramのDMにてご連絡する想定です。</dd></div></dl><p class="small-note">※本キャンペーンはポートフォリオ用の架空の企画です。実際の応募受付・抽選・賞品提供は行いません。</p></div></section>
 
-      <section class="campaign-steps" id="campaign-steps" aria-labelledby="steps-title"><h2 class="reveal" id="steps-title"><span class="pbc-mincho-ja">応募はかんたん</span>2<span class="pbc-mincho-ja">ステップ</span></h2><ol class="steps"><li class="step reveal"><div class="step-number"><small>STEP</small>01</div><div><svg aria-hidden="true"><use href="#icon-instagram"/></svg><p>PINK BERRY CLOUD<br>公式Instagramをフォロー。</p></div></li><li class="step reveal reveal-delay"><div class="step-number"><small>STEP</small>02</div><div><svg aria-hidden="true"><use href="#icon-heart"/></svg><p>キャンペーン対象投稿に<br>「いいね」。</p></div></li></ol><p class="steps-result reveal"><span class="pbc-mincho-ja">これで応募条件達成！</span></p><p class="small-note">当選者の方にはInstagramのDMで<br>ご連絡する想定です。<br>※架空の企画です。実際の応募受付・抽選は行いません。</p><button class="btn btn-primary" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button><svg class="wave" viewBox="0 0 390 35" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6C40 12 85 30 135 30C185 30 235 4 285 4C335 4 360 16 390 23V35H0Z"/></svg></section>
+      <section class="campaign-steps" id="campaign-steps" aria-labelledby="steps-title"><h2 class="reveal" id="steps-title"><span class="pbc-mincho-ja">応募はかんたん</span>2<span class="pbc-mincho-ja">ステップ</span></h2><ol class="steps"><li class="step reveal"><div class="step-number"><small>STEP</small>01</div><div><svg aria-hidden="true"><use href="#icon-instagram"/></svg><p>PINK BERRY CLOUD<br>公式Instagramをフォロー。</p></div></li><li class="step reveal reveal-delay"><div class="step-number"><small>STEP</small>02</div><div><svg aria-hidden="true"><use href="#icon-heart"/></svg><p>キャンペーン対象投稿に<br>「いいね」。</p></div></li></ol><p class="steps-result reveal"><span class="pbc-mincho-ja">これで応募条件達成！</span></p><p class="small-note">当選者の方にはInstagramのDMで<br>ご連絡する想定です。<br>※架空の企画です。実際の応募受付・抽選は行いません。</p><button class="btn btn-primary pbc-jelly" type="button" data-open="campaign"><svg aria-hidden="true"><use href="#icon-instagram"/></svg>Instagramで応募する<span class="arrow" aria-hidden="true">→</span></button><svg class="wave" viewBox="0 0 390 35" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6C40 12 85 30 135 30C185 30 235 4 285 4C335 4 360 16 390 23V35H0Z"/></svg></section>
 
-      <section class="last-cta" id="last-cta" aria-labelledby="last-title"><h2 class="reveal" id="last-title"><span class="pbc-mincho-ja">今日の気分に、</span><br><span class="pbc-mincho-ja">ピンクのご褒美を。</span></h2><div class="last-visual"><img class="reveal" src="images/pink-berry-cafe.png" width="1024" height="1536" loading="lazy" alt="ベリーとホイップをたっぷり重ねたPINK BERRY CLOUD"></div><div class="last-copy reveal"><p>甘酸っぱい3種のベリーと、<br>ヨーグルトの爽やかさ。<br>雲のようなふわふわホイップを重ねて。</p><p>甘くて、爽やかで、もうひと口飲みたくなる。<br>いつもの一日を、ちょっと幸せな一日に。</p><p class="brand-text last-brand">PINK BERRY CLOUD</p><p>この季節だけの、とっておきの一杯を。</p></div><button class="btn btn-primary" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button><p class="eyebrow">SWEET BERRIES. FLUFFY CLOUDS.</p></section>
+      <section class="last-cta" id="last-cta" aria-labelledby="last-title"><h2 class="reveal" id="last-title"><span class="pbc-mincho-ja">今日の気分に、</span><br><span class="pbc-mincho-ja">ピンクのご褒美を。</span></h2><div class="last-visual"><img class="reveal" src="images/pink-berry-cafe.png" width="1024" height="1536" loading="lazy" alt="ベリーとホイップをたっぷり重ねたPINK BERRY CLOUD"></div><div class="last-copy reveal"><p>甘酸っぱい3種のベリーと、<br>ヨーグルトの爽やかさ。<br>雲のようなふわふわホイップを重ねて。</p><p>甘くて、爽やかで、もうひと口飲みたくなる。<br>いつもの一日を、ちょっと幸せな一日に。</p><p class="brand-text last-brand">PINK BERRY CLOUD</p><p>この季節だけの、とっておきの一杯を。</p></div><button class="btn btn-primary pbc-jelly" type="button" data-open="order"><svg aria-hidden="true"><use href="#icon-cart"/></svg>モバイルオーダーする<span class="arrow" aria-hidden="true">→</span></button><p class="eyebrow">SWEET BERRIES. FLUFFY CLOUDS.</p></section>
 
       <footer class="footer" id="footer"><div class="section-ornament" aria-hidden="true"><span></span></div><p class="brand-text">PINK BERRY CLOUD</p><p class="eyebrow">SWEET BERRIES. FLUFFY CLOUDS.</p><nav class="footer-nav" aria-label="フッターメニュー"><a href="#hero">TOP</a><a href="#product">MENU</a><a href="#features">STORY</a><a href="#campaign">CAMPAIGN</a></nav><p class="small-note">本サイトはデザイン・Web制作のポートフォリオとして制作した架空のブランド・キャンペーンサイトです。</p><p class="small-note">実際の商品販売、注文受付、キャンペーン応募、抽選、賞品提供は行っておりません。</p><a class="top-link" href="#hero" aria-label="ページトップへ戻る">↑</a><small>© 2026 PINK BERRY CLOUD</small></footer>
     </div>
@@ -974,9 +1040,9 @@
     <div class="side-inner"><p class="side-kicker">LIMITED MENU</p><p class="side-product-name">PINK BERRY<br>CLOUD</p><img class="side-product-image" src="images/pink-berry-frappe.png" width="1024" height="1536" alt=""><p class="side-price">¥680 <small>（税込）</small></p><a class="side-campaign-link" href="#campaign"><span class="eyebrow">SPECIAL CAMPAIGN</span><strong><span class="pbc-mincho-ja">ふわっと、しあわせ。</span><br><span class="pbc-mincho-ja">プレゼントキャンペーン</span></strong><small>2027.03.01 — 03.31　→</small></a></div><span class="side-scroll-hint" aria-hidden="true">SCROLL TO DISCOVER</span>
   </aside>
 
-  <dialog id="order-dialog" aria-labelledby="order-title" aria-describedby="order-description"><button class="dialog-close" type="button" data-close aria-label="注文体験を閉じる">×</button><div class="dialog-content"><p class="eyebrow">YOUR LITTLE PINK TREAT</p><h2 id="order-title" tabindex="-1"><span class="pbc-mincho-ja">モバイルオーダー体験</span>（SAMPLE）</h2><p class="demo-note" id="order-description">ポートフォリオ用の注文体験画面です。<br>実際の商品注文や決済は行われません。</p><div id="order-edit"><div class="order-product"><img src="images/pink-berry-frappe.png" width="1024" height="1536" alt="PINK BERRY CLOUD"><div><h3>PINK BERRY<br>CLOUD</h3><p><span class="order-product-amount">¥680</span>（税込）</p></div></div><div class="quantity-row"><span id="quantity-label">数量</span><div class="quantity-controls" role="group" aria-labelledby="quantity-label"><button type="button" id="quantity-minus" aria-label="数量を1減らす" disabled>−</button><output id="quantity" aria-live="polite" aria-label="数量">1</output><button type="button" id="quantity-plus" aria-label="数量を1増やす">＋</button></div></div><div class="total-row"><span>合計 <small>（税込）</small></span><output id="order-total" aria-live="polite">¥680</output></div><div class="button-stack"><button class="btn btn-primary" type="button" id="confirm-order">注文内容を確認する</button><button class="btn btn-secondary" type="button" data-close>トップページに戻る</button></div></div><div id="order-confirm" hidden><dl class="confirmation-summary"><div><dt>商品名</dt><dd>PINK BERRY CLOUD</dd></div><div><dt>数量</dt><dd id="confirm-quantity">1個</dd></div><div><dt>合計（税込）</dt><dd id="confirm-total">¥680</dd></div></dl><p class="demo-note">注文内容の確認画面です。実際の注文・決済は行われません。</p><div class="button-stack" style="margin-top:22px"><button class="btn btn-secondary" type="button" id="edit-order">数量を変更する</button><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></div></div></dialog>
+  <dialog id="order-dialog" aria-labelledby="order-title" aria-describedby="order-description"><button class="dialog-close" type="button" data-close aria-label="注文体験を閉じる">×</button><div class="dialog-content"><p class="eyebrow">YOUR LITTLE PINK TREAT</p><h2 id="order-title" tabindex="-1"><span class="pbc-mincho-ja">モバイルオーダー体験</span>（SAMPLE）</h2><p class="demo-note" id="order-description">ポートフォリオ用の注文体験画面です。<br>実際の商品注文や決済は行われません。</p><div id="order-edit"><div class="order-product"><img src="images/pink-berry-frappe.png" width="1024" height="1536" alt="PINK BERRY CLOUD"><div><h3>PINK BERRY<br>CLOUD</h3><p><span class="order-product-amount">¥680</span>（税込）</p></div></div><div class="quantity-row"><span id="quantity-label">数量</span><div class="quantity-controls" role="group" aria-labelledby="quantity-label"><button type="button" id="quantity-minus" aria-label="数量を1減らす" disabled>−</button><output id="quantity" aria-live="polite" aria-label="数量">1</output><button type="button" id="quantity-plus" aria-label="数量を1増やす">＋</button></div></div><div class="total-row"><span>合計 <small>（税込）</small></span><output id="order-total" aria-live="polite">¥680</output></div><div class="button-stack"><button class="btn btn-primary pbc-jelly" type="button" id="confirm-order">注文内容を確認する</button><button class="btn btn-secondary pbc-jelly" type="button" data-close>トップページに戻る</button></div></div><div id="order-confirm" hidden><dl class="confirmation-summary"><div><dt>商品名</dt><dd>PINK BERRY CLOUD</dd></div><div><dt>数量</dt><dd id="confirm-quantity">1個</dd></div><div><dt>合計（税込）</dt><dd id="confirm-total">¥680</dd></div></dl><p class="demo-note">注文内容の確認画面です。実際の注文・決済は行われません。</p><div class="button-stack" style="margin-top:22px"><button class="btn btn-secondary pbc-jelly" type="button" id="edit-order">数量を変更する</button><button class="btn btn-primary pbc-jelly" type="button" data-close>トップページに戻る</button></div></div></div></dialog>
 
-  <dialog id="campaign-dialog" aria-labelledby="campaign-dialog-title" aria-describedby="campaign-dialog-description"><button class="dialog-close" type="button" data-close aria-label="キャンペーンのご案内を閉じる">×</button><div class="dialog-content campaign-dialog"><svg class="gift-icon" aria-hidden="true"><use href="#icon-gift"/></svg><h2 id="campaign-dialog-title" tabindex="-1">THANK YOU FOR<br>YOUR INTEREST ♡</h2><p id="campaign-dialog-description" style="margin-top:13px">キャンペーンに興味を持っていただき、<br>ありがとうございます。</p><h3><span class="pbc-mincho-ja">応募方法（イメージ）</span></h3><div class="modal-steps"><div><span>STEP 01</span>公式Instagramをフォロー</div><div class="modal-step-two"><span>STEP 02</span><div class="modal-step-description">キャンペーン対象投稿に<span class="modal-step-like">「いいね」</span></div></div></div><h3>SAMPLE SITE</h3><p>こちらはポートフォリオ用に制作した<br>架空のキャンペーンサイトです。</p><p>実際の応募受付やプレゼントの抽選は<br>行っておりません。</p><button class="btn btn-primary" type="button" data-close>トップページに戻る</button></div></dialog>
+  <dialog id="campaign-dialog" aria-labelledby="campaign-dialog-title" aria-describedby="campaign-dialog-description"><button class="dialog-close" type="button" data-close aria-label="キャンペーンのご案内を閉じる">×</button><div class="dialog-content campaign-dialog"><svg class="gift-icon" aria-hidden="true"><use href="#icon-gift"/></svg><h2 id="campaign-dialog-title" tabindex="-1">THANK YOU FOR<br>YOUR INTEREST ♡</h2><p id="campaign-dialog-description" style="margin-top:13px">キャンペーンに興味を持っていただき、<br>ありがとうございます。</p><h3><span class="pbc-mincho-ja">応募方法（イメージ）</span></h3><div class="modal-steps"><div><span>STEP 01</span>公式Instagramをフォロー</div><div class="modal-step-two"><span>STEP 02</span><div class="modal-step-description">キャンペーン対象投稿に<span class="modal-step-like">「いいね」</span></div></div></div><h3>SAMPLE SITE</h3><p>こちらはポートフォリオ用に制作した<br>架空のキャンペーンサイトです。</p><p>実際の応募受付やプレゼントの抽選は<br>行っておりません。</p><button class="btn btn-primary pbc-jelly" type="button" data-close>トップページに戻る</button></div></dialog>
 
   <script>
   (() => {
@@ -997,12 +1063,68 @@
     }
     document.addEventListener('pointerdown', event => {
       dialogInputIsTouch = event.pointerType === 'touch';
-      clearTouchReturnFocus();
+      document.documentElement.dataset.pbcInput = 'pointer';
+      // Keep touch-return suppression while the CTA still owns focus, including scrolling.
+      if (!dialogInputIsTouch) clearTouchReturnFocus();
     }, { capture: true, passive: true });
-    document.addEventListener('keydown', () => {
+    document.addEventListener('keydown', event => {
+      // OS shortcuts (including screenshots) do not switch the page to keyboard navigation.
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      const navigationKeys = ['Tab', 'Enter', ' ', 'Escape', 'ArrowUp', 'ArrowDown',
+        'ArrowLeft', 'ArrowRight', 'Home', 'End', 'PageUp', 'PageDown'];
+      if (!navigationKeys.includes(event.key)) return;
+      document.documentElement.dataset.pbcInput = 'keyboard';
       dialogInputIsTouch = false;
       clearTouchReturnFocus();
     }, true);
+    // Older touch event paths also preserve the same focus modality; never blur the CTA.
+    document.addEventListener('touchstart', () => {
+      document.documentElement.dataset.pbcInput = 'pointer';
+      dialogInputIsTouch = true;
+    }, { capture: true, passive: true });
+
+    const jellyCTAs = [...document.querySelectorAll('.btn.pbc-jelly')];
+    const jellyAnimations = new WeakMap();
+    let pressedCTA = null;
+    function releaseJelly(button) {
+      if (reduced.matches || typeof button.animate !== 'function') return;
+      const previous = jellyAnimations.get(button);
+      if (previous) previous.cancel();
+      const rest = window.matchMedia('(hover: hover)').matches && button.matches(':hover')
+        ? 'translateY(-1px)' : 'none';
+      jellyAnimations.set(button, button.animate([
+        { transform: 'translateY(2px) scale(.98, .94)', offset: 0 },
+        { transform: 'translateY(-1px) scale(1.008, 1.035)', offset: .4 },
+        { transform: 'translateY(.3px) scale(.997, .987)', offset: .7 },
+        { transform: rest, offset: 1 }
+      ], { duration: 450, easing: 'cubic-bezier(.33, 0, .3, 1)' }));
+    }
+    jellyCTAs.forEach(button => {
+      button.addEventListener('pointerdown', event => {
+        if (event.isPrimary && event.button === 0 && !button.disabled) {
+          const previous = jellyAnimations.get(button);
+          if (previous) previous.cancel();
+          pressedCTA = { button, pointerId: event.pointerId };
+        }
+      });
+      button.addEventListener('keyup', event => {
+        if (event.key === ' ' || event.key === 'Enter') releaseJelly(button);
+      });
+    });
+    document.addEventListener('pointerup', event => {
+      if (!pressedCTA || pressedCTA.pointerId !== event.pointerId) return;
+      const button = pressedCTA.button;
+      pressedCTA = null;
+      if (button.contains(event.target)) releaseJelly(button);
+    }, true);
+    document.addEventListener('pointercancel', () => { pressedCTA = null; }, true);
+    window.addEventListener('blur', () => { pressedCTA = null; });
+    reduced.addEventListener('change', () => {
+      if (reduced.matches) jellyCTAs.forEach(button => {
+        const animation = jellyAnimations.get(button);
+        if (animation) animation.cancel();
+      });
+    });
     let scrollLock = null;
     let quantity = 1;
     let revealObserver = null;
